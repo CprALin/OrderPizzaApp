@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function UserName() {
   return (
-    <div className='text-sm font-semibold'>Cpr</div>
+    <div className='hidden text-sm font-semibold md:block'>Cpr</div>
   )
 }
