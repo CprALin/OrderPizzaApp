@@ -23,6 +23,16 @@
   height: 100dvh;
 } */
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ascunde scrollbar-ul pentru Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
 .loader {
   width: 45px;
