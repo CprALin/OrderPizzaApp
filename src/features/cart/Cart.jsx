@@ -2,8 +2,10 @@ import LinkBtn from '../../ui/LinkBtn';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
+import { getCart } from './cartSlice';
+import { getUser } from '../user/userSlice';
 
-const fakeCart = [
+/* const fakeCart = [
   {
     pizzaId: 12,
     name: 'Mediterranean',
@@ -26,11 +28,11 @@ const fakeCart = [
     totalPrice: 15,
   },
 ];
-
+ */
 
 function Cart() {
-  const cart = fakeCart;
-  const username = useSelector((state) => state.user.username);
+  const cart = useSelector(getCart);
+  const username = useSelector(getUser);
   
   return (
     <div className='px-4 py-3'>
@@ -38,8 +40,8 @@ function Cart() {
 
       <h2 className='mt-7 text-xl font-semibold'>Your cart, {username}</h2>
 
-      <ul className='devide-y devide-stone-200 border-b mt-3'>
-        {cart.map((item) => <CartItem item={item} key={item.key}/>)}
+      <ul className='divide-y devide-stone-200 border-b mt-3'>
+        {cart.map((item) => <CartItem item={item} key={item.pizzaId}/>)}
       </ul>
 
       <div className='mt-6 space-x-2'>
